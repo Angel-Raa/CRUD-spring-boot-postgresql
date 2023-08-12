@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    restart: always
+    container_name: mydb
+    networks:
+      - red
+    environment:
+      - POSTGRES_DB=dbcart
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_USER=dbcart
+    volumes:
+      - data:/var/lib/
+    ports:
+      - 5050:5432
+
+  api:
+    build:
+      dockerfile: ./Dockerfile
+    restart: always
+    container_name: api
+    depends_on:
+      - postgres
+    networks:
+      - red
+    ports:
+      - 9000:8000
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://mydb:5432/dbcart
+      - SPRING_DATASOURCE_USERNAME=dbcart
+      - SPRING_DATASOURCE_PASSWORD=12345
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - POSTGRES_HOST=mydb
+
+networks:
+  red:
+
+volumes:
+  data:
