@@ -7,13 +7,13 @@ Este proyecto es un ejemplo de una aplicación CRUD (Crear, Leer, Actualizar y E
 - JDK 17
 - Spring Boot 3
 - PostgreSQL 15
-- Docker Compose
+- Docker 
 
 ## Configuración del Entorno
 
 Asegúrate de tener instalados los siguientes componentes en tu entorno de desarrollo antes de comenzar:
 
-1. [Docker Compose](https://docs.docker.com/compose/install/)
+1. [Docker](https://docs.docker.com/compose/install/)
 
 ## Instrucciones de Uso
 
