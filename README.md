@@ -30,4 +30,17 @@ cd CRUD-basico
 docker compose up -d
 
 ```
+## Endpoints de la API
+
+Una vez que los contenedores estén en funcionamiento, podrás acceder a los siguientes endpoints de la API:
+
+- **Obtener todos los productos:** [http://localhost:9000/product/](http://localhost:9000/product/)
+
+- **Obtener un solo producto:** [http://localhost:9000/product/{id}](http://localhost:9000/product/{id})
+
+- **Guardar un nuevo producto:** [http://localhost:9000/product/save](http://localhost:9000/product/save)
+
+- **Actualizar un producto existente:** [http://localhost:9000/product/update/{id}](http://localhost:9000/product/update/{id})
+
+- **Eliminar un producto:** [http://localhost:9000/product/delete/{id}](http://localhost:9000/product/delete/{id})
 
