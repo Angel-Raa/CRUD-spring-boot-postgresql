@@ -4,7 +4,7 @@ import lombok.NonNull;
 import lombok.extern.log4j.Log4j2;
 import org.caja.ideal.shoppingcart.exeptions.InvalidProductExeptions;
 import org.caja.ideal.shoppingcart.exeptions.NotFoundProductExeptions;
-import org.caja.ideal.shoppingcart.models.Product;
+import org.caja.ideal.shoppingcart.entity.models.Product;
 import org.caja.ideal.shoppingcart.repository.IProductRepository;
 import org.caja.ideal.shoppingcart.service.ProductService;
 import org.caja.ideal.shoppingcart.utils.Message;
@@ -63,5 +63,6 @@ public class ProductServiceImpl implements ProductService {
         Objects.requireNonNull(id, "Product body must not be null");
         Product product = repository.findById(id).orElseThrow(() -> new NotFoundProductExeptions(Message.NOT_FOUND_PRODUCT));
         repository.delete(product);
+
     }
 }

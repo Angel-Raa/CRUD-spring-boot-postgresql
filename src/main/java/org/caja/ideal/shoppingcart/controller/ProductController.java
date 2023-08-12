@@ -1,7 +1,7 @@
 package org.caja.ideal.shoppingcart.controller;
 
 import org.caja.ideal.shoppingcart.api.ApiResponse;
-import org.caja.ideal.shoppingcart.models.Product;
+import org.caja.ideal.shoppingcart.entity.models.Product;
 import org.caja.ideal.shoppingcart.service.ProductService;
 import org.caja.ideal.shoppingcart.utils.Message;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class ProductController {
     @Autowired
     private ProductService service;
 
-    @GetMapping("/")
+    @GetMapping("/list")
     public ResponseEntity<List<Product>> getAllProduct(){
         return ResponseEntity.ok((service.getAllProduct()));
     }

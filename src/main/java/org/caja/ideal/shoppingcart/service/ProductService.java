@@ -1,7 +1,7 @@
 package org.caja.ideal.shoppingcart.service;
 
 import lombok.NonNull;
-import org.caja.ideal.shoppingcart.models.Product;
+import org.caja.ideal.shoppingcart.entity.models.Product;
 
 import java.util.List;
 

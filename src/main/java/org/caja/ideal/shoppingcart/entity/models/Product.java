@@ -1,4 +1,4 @@
-package org.caja.ideal.shoppingcart.models;
+package org.caja.ideal.shoppingcart.entity.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
