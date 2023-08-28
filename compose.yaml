@@ -1,8 +1,8 @@
 services:
-  postgres:
+  database:
     image: postgres:15-alpine
     restart: always
-    container_name: mydb
+    container_name: database
     networks:
       - red
     environment:
@@ -12,25 +12,19 @@ services:
     volumes:
       - data:/var/lib/
     ports:
-      - 5050:5432
+      - 5000:5432
 
-  api:
+  backend:
     build:
       dockerfile: ./Dockerfile
     restart: always
-    container_name: api
+    container_name: backend
     depends_on:
-      - postgres
+      - database
     networks:
       - red
     ports:
       - 9000:8000
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://mydb:5432/dbcart
-      - SPRING_DATASOURCE_USERNAME=dbcart
-      - SPRING_DATASOURCE_PASSWORD=12345
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-      - POSTGRES_HOST=mydb
 
 networks:
   red:
