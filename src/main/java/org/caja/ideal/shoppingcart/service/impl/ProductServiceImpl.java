@@ -10,6 +10,7 @@ import org.caja.ideal.shoppingcart.service.ProductService;
 import org.caja.ideal.shoppingcart.utils.Message;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProduct(@NonNull Long id) {
         log.info(" PRODUCTO ");
-        return repository.findById(id).orElseThrow(() -> new NotFoundProductExeptions(Message.NOT_FOUND_PRODUCT));
+        return repository.findById(id).orElseThrow(() -> new NotFoundProductExeptions(Message.NOT_FOUND_PRODUCT, HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND));
     }
 
     @Transactional
@@ -43,7 +44,7 @@ public class ProductServiceImpl implements ProductService {
     public Product saveProduct(Product body) {
       Optional<Product> productId = repository.findByName(body.getName());
       if(productId.isPresent()){
-          throw new InvalidProductExeptions(Message.PRODUCT_ALREADY_EXISTS);
+          throw new InvalidProductExeptions(Message.PRODUCT_ALREADY_EXISTS,HttpStatus.CONFLICT.value(),HttpStatus.CONFLICT);
       }
         log.info("SAVE");
         return repository.save(body);
@@ -51,7 +52,7 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     @Override
     public Product updateProduct(@NonNull Long id, @NonNull Product body) {
-        Product product = repository.findById(id).orElseThrow(( ) -> new NotFoundProductExeptions(Message.NOT_FOUND_PRODUCT));
+        Product product = repository.findById(id).orElseThrow(( ) -> new NotFoundProductExeptions(Message.NOT_FOUND_PRODUCT, HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND));
         BeanUtils.copyProperties(body, product, "id", "createAt");
         Product updateProduct = product;
         return repository.save(updateProduct);
@@ -61,7 +62,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void deleteProduct(@NonNull Long id) {
         Objects.requireNonNull(id, "Product body must not be null");
-        Product product = repository.findById(id).orElseThrow(() -> new NotFoundProductExeptions(Message.NOT_FOUND_PRODUCT));
+        Product product = repository.findById(id).orElseThrow(() -> new NotFoundProductExeptions(Message.NOT_FOUND_PRODUCT, HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND));
         repository.delete(product);
 
     }

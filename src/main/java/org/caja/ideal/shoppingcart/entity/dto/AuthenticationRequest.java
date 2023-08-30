@@ -1,6 +1,9 @@
 package org.caja.ideal.shoppingcart.entity.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class AuthenticationRequest {
+    @NotBlank
     private String username;
     private String password;
 

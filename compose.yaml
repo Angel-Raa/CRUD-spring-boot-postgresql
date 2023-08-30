@@ -24,7 +24,7 @@ services:
     networks:
       - red
     ports:
-      - 9000:8000
+      - 9000:8080
 
 networks:
   red:
