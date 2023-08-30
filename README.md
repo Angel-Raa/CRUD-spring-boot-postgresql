@@ -194,4 +194,5 @@ Aquí hay algunos recursos adicionales que podrían ser útiles:
 - [Documentacion de Spring boot](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
 - [Documentacion de Maven](https://maven.apache.org/guides/getting-started/)
 - [Documentacion de Docker](https://docs.docker.com/)
+- [Documentacion de Spring Security](https://docs.spring.io/spring-security/reference/index.html)
 
