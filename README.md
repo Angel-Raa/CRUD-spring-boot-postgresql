@@ -48,6 +48,17 @@ Esta API permite gestionar productos en un sistema.
 
 Se requiere autenticación para acceder a los endpoints de esta API. Puedes obtener un token JWT mediante los siguientes endpoints:
 
+| Método   | Endpoint                               | Descripción                                |
+|----------|----------------------------------------|--------------------------------------------|
+| POST     | `/authentication/login`                | Iniciar sesión de usuario                  |
+| POST     | `/authentication/sign`                 | Registro de usuario                        |
+| GET      | `/product/list`                        | Obtener todos los productos                |
+| GET      | `/product/{id}`                        | Obtener un solo producto                   |
+| POST     | `/product/add`                         | Guardar un nuevo producto                  |
+| PUT      | `/product/update/{id}`                 | Actualizar un producto existente           |
+| DELETE   | `/product/{id}`                        | Eliminar un producto                       |
+
+
 - **Iniciar sesión de usuario:** `POST /authentication/login`
     - Cuerpo de la solicitud:
         ```json
