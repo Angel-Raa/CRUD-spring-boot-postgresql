@@ -42,7 +42,7 @@ Esta API permite gestionar productos en un sistema.
 
 ## Base URL
 
-- [http://localhost:8000](http://localhost:9000)
+- [http://localhost:9000](http://localhost:9000)
 
 ## Autenticación
 
