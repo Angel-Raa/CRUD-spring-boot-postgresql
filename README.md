@@ -6,7 +6,7 @@ Este proyecto es un ejemplo de una aplicación CRUD (Crear, Leer, Actualizar y E
 
 - JDK 17
 - Spring Boot 3
-- spring security 6
+- Spring security 6
 - PostgreSQL 15
 - Java JWT
 - Docker 
