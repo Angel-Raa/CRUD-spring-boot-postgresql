@@ -11,8 +11,6 @@ services:
       - POSTGRES_USER=dbcart
     volumes:
       - data:/var/lib/
-    ports:
-      - 5000:5432
 
   backend:
     build:
@@ -23,6 +21,12 @@ services:
       - database
     networks:
       - red
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/dbcart
+      - SPRING_DATASOURCE_USERNAME=dbcart
+      - SPRING_DATASOURCE_PASSWORD=12345
+      - SPRING.JPA.PROPERTIES.HIBERNATE.DIALECT=org.hibernate.dialect.PostgreSQLDialect
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     ports:
       - 9000:8080
 
