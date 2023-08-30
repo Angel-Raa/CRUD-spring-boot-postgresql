@@ -42,7 +42,7 @@ Esta API permite gestionar productos en un sistema.
 
 ## Base URL
 
-- [http://localhost:8000](http://localhost:8000)
+- [http://localhost:8000](http://localhost:9000)
 
 ## Autenticación
 
@@ -80,7 +80,7 @@ Se requiere autenticación para acceder a los endpoints de esta API. Puedes obte
 
 ## Endpoints de Productos
 
-- **Obtener todos los productos:** `GET /product/`
+- **Obtener todos los productos:** `GET /product/list`
     - Respuesta exitosa:
         ```json
         [
@@ -119,7 +119,7 @@ Se requiere autenticación para acceder a los endpoints de esta API. Puedes obte
         }
         ```
 
-- **Guardar un nuevo producto:** `POST /product/save`
+- **Guardar un nuevo producto:** `POST /product/add`
     - Cuerpo de la solicitud:
         ```json
         {
@@ -160,7 +160,7 @@ Se requiere autenticación para acceder a los endpoints de esta API. Puedes obte
         }
         ```
 
-- **Eliminar un producto:** `DELETE /product/delete/{id}`
+- **Eliminar un producto:** `DELETE /product/{id}`
     - Parámetros:
         - `{id}`: ID del producto a eliminar
     - Respuesta exitosa:
