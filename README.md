@@ -36,15 +36,9 @@ cd CRUD-basico
 docker compose up -d
 ```
 
-## API de Gestión de Productos
-
-Esta API permite gestionar productos en un sistema.
-
 ## Base URL
 
 - [http://localhost:9000](http://localhost:9000)
-
-## Autenticación
 
 Se requiere autenticación para acceder a los endpoints de esta API. Puedes obtener un token JWT mediante los siguientes endpoints:
 
@@ -58,7 +52,7 @@ Se requiere autenticación para acceder a los endpoints de esta API. Puedes obte
 | PUT      | `/product/update/{id}`                 | Actualizar un producto existente           |
 | DELETE   | `/product/{id}`                        | Eliminar un producto                       |
 
-
+## Autenticación
 - **Iniciar sesión de usuario:** `POST /authentication/login`
     - Cuerpo de la solicitud:
         ```json
