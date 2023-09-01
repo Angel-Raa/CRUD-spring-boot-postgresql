@@ -46,11 +46,6 @@ Se requiere autenticación para acceder a los endpoints de esta API. Puedes obte
 |----------|----------------------------------------|--------------------------------------------|
 | POST     | `/authentication/login`                | Iniciar sesión de usuario                  |
 | POST     | `/authentication/sign`                 | Registro de usuario                        |
-| GET      | `/product/list`                        | Obtener todos los productos                |
-| GET      | `/product/{id}`                        | Obtener un solo producto                   |
-| POST     | `/product/add`                         | Guardar un nuevo producto                  |
-| PUT      | `/product/update/{id}`                 | Actualizar un producto existente           |
-| DELETE   | `/product/{id}`                        | Eliminar un producto                       |
 
 ## Autenticación
 - **Iniciar sesión de usuario:** `POST /authentication/login`
@@ -84,6 +79,14 @@ Se requiere autenticación para acceder a los endpoints de esta API. Puedes obte
         ```
 
 ## Endpoints de Productos
+
+| Método   | Endpoint                               | Descripción                                |
+|----------|----------------------------------------|--------------------------------------------|
+| GET      | `/product/list`                        | Obtener todos los productos                |
+| GET      | `/product/{id}`                        | Obtener un solo producto                   |
+| POST     | `/product/add`                         | Guardar un nuevo producto                  |
+| PUT      | `/product/update/{id}`                 | Actualizar un producto existente           |
+| DELETE   | `/product/{id}`                        | Eliminar un producto                       |
 
 - **Obtener todos los productos:** `GET /product/list`
     - Respuesta exitosa:
