@@ -24,11 +24,11 @@ Sigue estos pasos para ejecutar la aplicación en tu entorno local:
 
 #### Clonar el repositorio en tu máquina local
 ```
-git clone https://github.com/Angel-Raa/CRUD-basico.git
+git clone https://github.com/Angel-Raa/CRUD-spring-boot-postgresql.git
 ```
 #### Navegar al directorio del proyecto
 ```
-cd CRUD-basico
+cd CRUD-spring-boot-postgresql
 ```
 
 #### Construir y ejecutar los contenedores de Docker Compose
